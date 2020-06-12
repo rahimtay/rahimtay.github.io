@@ -3,3 +3,69 @@ img{
     height: 150px;
     
 }
+.main{
+    width: 70%;
+    margin: auto;
+}
+.threeCards{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d73572;
+}
+.threeCards .card{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    perspective: 1000px;
+    background-color:#d73572;
+}
+.card:not(:first-child){
+    margin-left:3% ;
+}
+.front, .back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    backface-visibility: hidden;
+    border-radius: 15px;
+}
+.front{
+    background-color: green;
+}
+.front p{
+    width: 100%;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.4em;
+    margin-top: 40%;
+    line-height: 26px;
+    text-align: center;
+    color: white;
+}
+.back{
+    transform: rotateY(180deg);
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.4em;
+    text-align: center;
+    line-height: 26px;
+    color: white;
+    background-color: rgb(127, 231, 127);
+}
+.card:hover .front{
+    transform: rotateY(180deg);
+}
+.card:hover .back{
+    transform: rotateY(360deg);
+}
